@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  localstack:
+    image: localstack/localstack:latest
+    environment:
+      - AWS_DEFAULT_REGION=us-east-1
+      - EDGE_PORT=4566
+      - SERVICES=lambda,s3,cloudformation,sts,iam,dynamodb
+      - AWS_XRAY_SDK_ENABLED=true
+      - DEBUG=${DEBUG- }
+      - DATA_DIR=${DATA_DIR- }
+    ports:
+      - '4566-4597:4566-4597'
+    volumes:
+      - "${TEMPDIR:-/tmp/localstack}:/temp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./resources/image:/opt/image"

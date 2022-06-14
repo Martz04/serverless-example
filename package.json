@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "serverless-deployment-bucket": "^1.6.0",
+    "serverless-localstack": "^0.4.36"
+  },
+  "dependencies": {
+    "serverless-python-requirements": "^5.4.0"
+  }
+}
