@@ -50,6 +50,28 @@ functions:
         event: s3:ObjectCreated:*
         rules:
           - suffix: .png
+  list_thumbnails:
+    handler: src/handler.s3_get_thumbnail_urls
+    events:
+      - http:
+          path: images/all
+          method: get
+          cors: true
+  get_thumbnail:
+    handler: src/handler.s3_get_item
+    events:
+      - http:
+          path: images/get/{id}
+          method: get
+          cors: true
+  delete_thumbnail:
+    handler: src/handler.s3_delete_item
+    events:
+      - http:
+          path: images/delete/{id}
+          method: delete
+          cors: true
+
 
 plugins:
   - serverless-localstack

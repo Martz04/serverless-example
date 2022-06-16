@@ -6,7 +6,7 @@ services:
     environment:
       - AWS_DEFAULT_REGION=us-east-1
       - EDGE_PORT=4566
-      - SERVICES=lambda,s3,cloudformation,sts,iam,dynamodb
+      - SERVICES=lambda,s3,cloudformation,sts,iam,dynamodb,apigateway
       - AWS_XRAY_SDK_ENABLED=true
       - DEBUG=${DEBUG- }
       - DATA_DIR=${DATA_DIR- }
