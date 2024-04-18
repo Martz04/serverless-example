@@ -1,6 +1,16 @@
 # serverless-example
 Serverless framework, Docker and Localstack example with Python, Using S3, DynamoDB, API Gateway.
 
+## Run Test
+
+Install Local src so that we can import in UnitTest easily
+    
+    pip install -e src
+
+Run Tests
+
+    pytest
+
 ### Running the API Gateway
 
     http://localhost:4566/restapis/9bbj2ox5px/local/_user_request_/images/all
